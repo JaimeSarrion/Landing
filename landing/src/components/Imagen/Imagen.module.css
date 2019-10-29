@@ -1,0 +1,19 @@
+.Imagen {
+    background-image:url(https://mk0athemesdemon3j7s5.kinstacdn.com/wp-content/themes/west/images/header.jpg);
+    height: auto;
+    width: 100%;
+    filter: brightness(0.45);
+    display: block;
+}
+
+
+.HeaderImagen{
+    width: 100%;
+    top: 26%;
+    text-align: center;
+    z-index: 11;
+}
+
+.Contenido{
+    display: block;
+}

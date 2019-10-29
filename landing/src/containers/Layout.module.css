@@ -1,0 +1,21 @@
+.Imagen{
+    text-align: center;
+}
+
+.Pagina{
+    display: grid;
+}
+
+.Redes{
+    padding-bottom: 120px;
+    padding-top: 120px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.Competencias{
+    padding-bottom: 120px;
+    padding-top: 120px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
