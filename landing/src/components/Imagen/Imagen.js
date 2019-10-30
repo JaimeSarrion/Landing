@@ -8,13 +8,10 @@ class Imagen extends Component {
 
     render() {
         return (
-            <Aux >
-                <div className={classes.HeaderImagen}>
-                    <Header></Header>
-                    <img className={classes.Imagen} src="https://mk0athemesdemon3j7s5.kinstacdn.com/wp-content/themes/west/images/header.jpg"></img>
-                </div>
-            </Aux>
-
+            <div className={classes.HeaderImagen}>
+                <Header></Header>
+                <img className={classes.Imagen} src="https://mk0athemesdemon3j7s5.kinstacdn.com/wp-content/themes/west/images/header.jpg"></img>
+            </div>
         )
     }
 

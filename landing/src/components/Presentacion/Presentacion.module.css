@@ -1,0 +1,29 @@
+.Container{
+    padding-bottom: 120px;
+    padding-top: 120px;
+    background-color: rgb(239, 241, 248);
+}
+
+.Titulo{
+    color: rgb(43, 45, 58);
+    font-size: 52px;
+    font-weight: 900;
+    font-family: "Open Sans";
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 66px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: transparent;
+    border-color: rgb(206, 234, 101);
+    border-width: 1px;
+}
+
+.Texto{
+    color: rgb(137, 141, 158);
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: "Open Sans";
+    padding: 0% 10%;
+}

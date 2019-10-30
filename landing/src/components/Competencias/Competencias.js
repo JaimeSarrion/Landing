@@ -20,7 +20,7 @@ class Competencias extends Component {
             },
             {
                 id: 3,
-                Nombre: "Diseño",
+                Nombre: "DESIGN",
                 Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
                 Icono: "Brush"
             }
