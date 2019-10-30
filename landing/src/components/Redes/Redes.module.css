@@ -1,0 +1,30 @@
+.Redes{
+    padding-bottom: 120px;
+    padding-top: 50px;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: rgb(28, 30, 41);
+    color: whitesmoke;
+    width: 100%;
+    text-align: center;
+}
+
+
+.Titulo{
+    color: #EBEEF1;
+    font-size: 52px;
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+.Circulo{
+    background-color: #eaab1c;
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 8px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+}

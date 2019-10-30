@@ -4,6 +4,7 @@ import classes from './Layout.module.css'
 import Proyectos from '../components/Proyectos/Proyectos'
 import Competencias from '../components/Competencias/Competencias'
 import Presentacion from '../components/Presentacion/Presentacion'
+import Redes from '../components/Redes/Redes'
 
 class Layout extends Component {
 
@@ -16,12 +17,7 @@ class Layout extends Component {
                 <Competencias />
                 <Presentacion/>
                 <Proyectos/>
-
-                <div className={classes.Redes}>
-                    <h2>Redes sociales</h2>
-                </div>
-
-
+                <Redes/>
             </div>
         )
     }
