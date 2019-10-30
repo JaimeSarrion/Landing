@@ -5,19 +5,24 @@ import Proyectos from '../components/Proyectos/Proyectos'
 import Competencias from '../components/Competencias/Competencias'
 import Presentacion from '../components/Presentacion/Presentacion'
 import Redes from '../components/Redes/Redes'
+import { Element } from 'react-scroll'
 
 class Layout extends Component {
-
-
 
     render() {
         return (
             <div className={classes.Pagina}>
+
                 <Imagen />
                 <Competencias />
-                <Presentacion/>
-                <Proyectos/>
-                <Redes/>
+                <Element name="presentacion">
+                    <Presentacion />
+                </Element>
+                <Element name="proyectos">
+                    <Proyectos />
+                </Element>
+                <Redes />
+
             </div>
         )
     }
