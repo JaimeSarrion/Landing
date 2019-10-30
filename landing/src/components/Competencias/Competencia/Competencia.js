@@ -3,6 +3,7 @@ import classes from './Competencia.module.css'
 import AndroidIcon from '@material-ui/icons/Android';
 import BrushIcon from '@material-ui/icons/Brush';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
+import SettingsRemoteIcon from '@material-ui/icons/SettingsRemote';
 
 class Competencia extends Component {
 
@@ -19,6 +20,13 @@ class Competencia extends Component {
             case "Brush":
                 icon = (<BrushIcon htmlColor="whitesmoke" fontSize="large" style={{ marginTop: "36px" }} color="white" ></BrushIcon>)
                 break;
+            case "IoT":
+                icon = (<SettingsRemoteIcon htmlColor="whitesmoke" fontSize="large" style={{ marginTop: "36px" }} color="white" ></SettingsRemoteIcon>)
+                break;
+            default:
+                icon = (<DesktopMacIcon htmlColor="whitesmoke" fontSize="large" style={{ marginTop: "36px" }} color="white" ></DesktopMacIcon>)
+                break;
+
         }
 
         return (

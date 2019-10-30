@@ -1,0 +1,47 @@
+.Container{
+    padding-bottom: 120px;
+    padding-top: 120px;
+}
+
+.Titulo{
+    font-size: 52px;
+    font-weight: 900;
+    font-family: "Open Sans";
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 50px;
+    margin-bottom: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-color: rgb(206, 234, 101);
+    border-width: 1px;
+}
+
+.Texto{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-bottom: 70px;
+    color: rgb(150, 156, 179);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Open Sans";
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-align: center;
+}
+.Proyectos{
+    padding: 0% 10%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

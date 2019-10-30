@@ -1,6 +1,6 @@
 .Container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
     grid-template-rows: 1fr;
     padding-bottom: 120px;
     padding-top: 120px;

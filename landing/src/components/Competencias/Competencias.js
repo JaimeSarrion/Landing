@@ -23,7 +23,13 @@ class Competencias extends Component {
                 Nombre: "DESIGN",
                 Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
                 Icono: "Brush"
-            }
+            },
+            {
+                id: 4,
+                Nombre: "IoT",
+                Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
+                Icono: "IoT"
+            },
         ]
     }
 
@@ -41,7 +47,7 @@ class Competencias extends Component {
         return (
             <div className={classes.Container}>
                 <div />
-                {competencias}
+                    {competencias}
                 <div />
             </div>
         )
