@@ -11,8 +11,8 @@ class Header extends Component {
                 <div className={classes.HeaderBotones}>
 
                 </div>
-                <a className={[classes.Button,classes.HeaderButton].join(' ')}>¿QUIÉN SOY?</a>
-                <a className={[classes.Button,classes.HeaderButton, classes.RightButton].join(' ')}>MIS PROYECTOS</a>
+                <a className={[classes.Button,classes.HeaderButton].join(' ')}>¿WHO I AM?</a>
+                <a className={[classes.Button,classes.HeaderButton, classes.RightButton].join(' ')}>MY PROJECTS</a>
             </div>
         )
     }
