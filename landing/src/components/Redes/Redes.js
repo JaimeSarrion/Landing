@@ -11,7 +11,7 @@ class Redes extends Component {
         return (
             <div className={classes.Redes}>
                 <h3 className={classes.Titulo}>
-                    Redes Sociales
+                    Social Networks
                 </h3>
                 <a href='https://github.com/JaimeSarrion' className={classes.Circulo}>
                     <GitHubIcon fontSize="large" htmlColor="whitesmoke" fontSize="large" style={{ marginTop: "36px" }} color="white"/>
