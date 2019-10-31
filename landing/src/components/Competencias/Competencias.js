@@ -9,25 +9,25 @@ class Competencias extends Component {
             {
                 id: 1,
                 Nombre: "WEB",
-                Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
+                Desc: "Developing Front-end and Back-end with current frameworks such as React, Vue, Angular or Node.",
                 Icono: "Desktop"
             },
             {
                 id: 2,
                 Nombre: "MOBILE",
-                Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
+                Desc: "I have experience developing mobile applications with React Native, Ionic and Android.",
                 Icono: "Android"
             },
             {
                 id: 3,
                 Nombre: "DESIGN",
-                Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
+                Desc: "Experience with Photoshop and wireframing programs.",
                 Icono: "Brush"
             },
             {
                 id: 4,
                 Nombre: "IoT",
-                Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend interdum lacus, eu consequat dolor convallis eu interdum lacus.",
+                Desc: "I have developed applications with Raspberry, LoRa boards all connected with Arduino sensors",
                 Icono: "IoT"
             },
         ]
