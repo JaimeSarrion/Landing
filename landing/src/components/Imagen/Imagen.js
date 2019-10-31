@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classes from './Imagen.module.css'
 import Header from '../header/header'
+import imagen from '../../images/header.jpg'
 
 class Imagen extends Component {
 
@@ -8,7 +9,7 @@ class Imagen extends Component {
         return (
             <div className={classes.HeaderImagen}>
                 <Header></Header>
-                <img alt="" className={classes.Imagen} src="https://mk0athemesdemon3j7s5.kinstacdn.com/wp-content/themes/west/images/header.jpg"></img>
+                <img alt="" className={classes.Imagen} src={imagen}></img>
             </div>
         )
     }
