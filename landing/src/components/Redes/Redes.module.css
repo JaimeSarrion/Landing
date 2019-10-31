@@ -11,7 +11,8 @@
 
 .Titulo{
     color: #EBEEF1;
-    font-size: 52px;
+    font-size: 40px;
+
     text-align: center;
     font-family: "Open Sans";
 }
@@ -26,4 +27,11 @@
     line-height: 40px;
     border-radius: 50%;
     text-align: center;
+}
+
+
+@media(min-width: 800px){
+    .Titulo{
+        font-size: 52px;
+    }
 }

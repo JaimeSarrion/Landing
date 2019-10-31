@@ -27,3 +27,20 @@
     font-family: "Open Sans";
     padding: 0% 10%;
 }
+
+@media(min-width: 200px){
+    .Texto{
+        font-size: 14px;
+    }
+    .Titulo{
+        font-size: 40px;
+    }
+
+}
+
+
+@media(min-width: 800px){
+
+
+}
+

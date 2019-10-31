@@ -18,10 +18,10 @@ class Layout extends Component {
                 <Element name="presentacion">
                     <Presentacion />
                 </Element>
-                <Element name="proyectos">
+                 <Element name="proyectos">
                     <Proyectos />
                 </Element>
-                <Redes />
+                <Redes /> 
 
             </div>
         )

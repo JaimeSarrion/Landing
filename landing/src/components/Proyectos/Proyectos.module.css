@@ -1,7 +1,6 @@
 .Container{
     padding-bottom: 120px;
     padding-top: 120px;
-    text-align: -webkit-center;
 }
 
 .Titulo{
@@ -41,9 +40,33 @@
     text-align: center;
 }
 .Proyectos{
-    padding: 0% 10%;
+    padding: 3% 3%;
     width: 80%;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     justify-items: center;
+}
+
+
+@media(min-width: 360px){
+    .Proyectos{
+        padding: 0% 10%;
+    }
+
+}
+
+@media(min-width: 400px){
+    .Proyectos{
+        padding: 0% 14%;
+    }
+
+}
+@media(min-width: 768px){
+    .Proyectos{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 7%;
+    }
+    .Proyectos{
+        padding: 0%;
+    }
 }
