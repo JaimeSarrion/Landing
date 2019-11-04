@@ -39,8 +39,9 @@
 }
 
 
-@media(min-width: 800px){
-
-
+@media(min-width: 400px){
+    .Texto{
+        font-size: 18px;
+    }
 }
 

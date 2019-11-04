@@ -47,16 +47,23 @@
 }
 
 
+
+@media(min-width: 320px){
+    .Proyectos{
+        padding: 0% 3%;
+    }
+}
+
+
 @media(min-width: 360px){
     .Proyectos{
-        padding: 0% 10%;
+        padding: 0% 8%;
     }
-
 }
 
 @media(min-width: 400px){
     .Proyectos{
-        padding: 0% 14%;
+        text-align: -webkit-center;
     }
 
 }
@@ -66,7 +73,16 @@
         grid-template-columns: auto auto;
         margin: 7%;
     }
+    .Container {
+        text-align: -webkit-center;
+    }
     .Proyectos{
         padding: 0%;
+    }
+}
+
+@media(min-width: 1370px){
+    .Proyectos{
+        grid-template-columns: auto auto auto auto;
     }
 }

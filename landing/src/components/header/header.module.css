@@ -50,11 +50,24 @@
     .Header{
         top: 8%;
     }
+    .Button{
+        padding: 10px 10px;
+    }
 }
 
 @media(min-width: 400px){
     .Header{
         top: 20%;
+    }
+}
+
+@media(min-width: 700px){
+    .Button{
+        padding: 15px 30px;
+        font-size: 13px;
+    }
+    .Titulo{
+        font-size: 55px;
     }
 }
 
