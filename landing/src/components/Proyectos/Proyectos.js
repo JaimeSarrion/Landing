@@ -30,7 +30,7 @@ class Proyectos extends Component {
                 Titulo: "Grandallapp",
                 Desc: "Mobile application made with Android for the HackForGood in the University of Alicante.",
                 Imagen:"https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/2d/c8/c6/2dc8c6d5-f92e-e2de-0e17-8d378ebcb64c/source/512x512bb.jpg",
-                Uri: "https://play.google.com/store/apps/details?id=es.vivealmansa.app&hl=es_419"
+                Uri: "https://github.com/JaimeSarrion/Grandallapp"
             },
             
         ]
