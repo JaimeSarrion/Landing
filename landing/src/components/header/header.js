@@ -9,7 +9,7 @@ class Header extends Component {
         return (
 
             <div className={classes.Header}>
-                <h2 className={classes.Titulo}>Jaime Sarrión</h2>.
+                <h2 className={classes.Titulo}>Jaime Sarrión</h2>
                 <div className={classes.HeaderBotones}>
 
                 </div>
