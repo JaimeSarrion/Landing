@@ -1,6 +1,6 @@
 {
-  "short_name": "Jaime",
-  "name": "Landing of Jaime Sarrion",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

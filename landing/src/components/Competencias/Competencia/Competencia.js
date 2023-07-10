@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import classes from './Competencia.module.css';
-import AndroidIcon from '@material-ui/icons/Android';
-import BrushIcon from '@material-ui/icons/Brush';
-import DesktopMacIcon from '@material-ui/icons/DesktopMac';
-import SettingsRemoteIcon from '@material-ui/icons/SettingsRemote';
+import AndroidIcon from '@mui/icons-material/Android';
+import BrushIcon from '@mui/icons-material/Brush';
+import DesktopMacIcon from '@mui/icons-material/DesktopMac';
+import SettingsRemoteIcon from '@mui/icons-material/SettingsRemote';
 
 class Competencia extends Component {
   render() {
