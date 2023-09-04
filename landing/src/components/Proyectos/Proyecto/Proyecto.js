@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import classes from './Proyecto.module.css'
 import hbo from '../../../images/hbo-imagen.png'
 import Grandalla from '../../../images/Grandalla-Imagen.png'
-
+import BeerOdissey from '../../../images/black_beerOdyssey.png'
 
 class Proyecto extends Component {
 
     onClickHandler = () => {
-        window.location.href = this.props.Uri;
+        window.open(this.props.Uri,"_blank" );
     }
 
     render() {
@@ -15,10 +15,13 @@ class Proyecto extends Component {
 
         switch (this.props.Titulo) {
             case 'Grandallapp':
-                imagen = (<img src={Grandalla} alt="Avatar" className={classes.Imagen}></img>)
+                imagen = (<img src={Grandalla} alt="Grandalla image" className={classes.Imagen}></img>)
                 break;
             case 'HBO':
-                imagen = (<img src={hbo} alt="Avatar" className={classes.Imagen}></img>)
+                imagen = (<img src={hbo} alt="hbo image" className={classes.Imagen}></img>)
+                break;
+            case 'Beer Odyssey':
+                imagen = (<img src={BeerOdissey} alt="Beer odissey image" className={classes.Imagen}></img>)
                 break;
             default:
                 imagen = <img src={this.props.Imagen} alt="Avatar" className={classes.Imagen}></img>
