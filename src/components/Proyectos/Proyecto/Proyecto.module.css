@@ -46,6 +46,7 @@
     background-color: rgb(234, 171, 28);
     color: white;
     transform: rotateY(180deg);
+    cursor: pointer;
   }
 
   .Imagen{
