@@ -23,6 +23,6 @@ You have to execute the following commands:
 - ``` npm start ``` 
 
 
-# Autores
+# Authors
 
 - [Jaime Sarrion](https://www.linkedin.com/in/jaime-sarrion-sahuquillo/)
