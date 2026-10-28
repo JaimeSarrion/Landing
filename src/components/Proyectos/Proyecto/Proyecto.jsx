@@ -11,7 +11,7 @@ class Proyecto extends Component {
   };
 
   render() {
-    let imagen = "";
+    let imagen;
 
     switch (this.props.Titulo) {
       case "Grandallapp":
