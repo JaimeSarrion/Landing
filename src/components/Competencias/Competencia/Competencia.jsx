@@ -7,7 +7,7 @@ import SettingsRemoteIcon from '@mui/icons-material/SettingsRemote';
 
 class Competencia extends Component {
   render() {
-    let icon = '';
+    let icon;
     switch (this.props.Icono) {
       case 'Android':
         icon = (
