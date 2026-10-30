@@ -15,19 +15,20 @@ In digital marketing, a landing page is a standalone web page, created specifica
 ## Prerequisites
 
 - [NodeJS](https://nodejs.org/es/download/) 22.22.2+, 24.15+ or 26+
+- [pnpm](https://pnpm.io/installation) (the exact version is pinned in the `packageManager` field of `package.json`)
 
 ## Installation
 
 This project is built with [Vite](https://vite.dev/). You have to execute the following commands:
-- ``` npm install ```
-- ``` npm run dev ``` — start the development server
+- ``` pnpm install ```
+- ``` pnpm run dev ``` — start the development server
 
 ## Other commands
 
-- ``` npm run build ``` — build for production into the `build` folder
-- ``` npm run preview ``` — preview the production build locally
-- ``` npm test ``` — run the tests with Vitest
-- ``` npm run lint ``` — lint the code with ESLint
+- ``` pnpm run build ``` — build for production into the `build` folder
+- ``` pnpm run preview ``` — preview the production build locally
+- ``` pnpm test ``` — run the tests with Vitest
+- ``` pnpm run lint ``` — lint the code with ESLint
 
 
 # Authors
