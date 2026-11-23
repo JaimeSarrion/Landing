@@ -90,42 +90,68 @@ export const projects: Project[] = [
 ];
 
 export interface Job {
-  role: string;
   company: string;
+  role: string;
   dates: string;
-  line: string;
+  year: string;
+  points: string[];
 }
 
 export const jobs: Job[] = [
   {
-    role: 'Lead Frontend Developer',
-    company: 'Qida',
-    dates: '2024 to now',
-    line: 'Built and lead a five-person team, its component library and an AI testing workflow.',
+    company: 'First jobs',
+    role: 'Mobile and full-stack at TGM, Ribera Salud and Agensys',
+    dates: '2017 – 2019',
+    year: '2017',
+    points: [
+      'Two cross-platform Ionic apps, from concept to the stores.',
+      'Healthcare management software in React, Node and .NET.',
+      'Brought Git to a team that had no version control.',
+    ],
   },
   {
-    role: 'Senior Frontend Developer',
-    company: 'Bravo Capital',
-    dates: '2023 to 2024',
-    line: 'Set the architecture and coding standards, and cut load times on critical screens.',
-  },
-  {
-    role: 'Senior UI Developer and Product Owner',
-    company: 'Rated Power',
-    dates: '2020 to 2023',
-    line: 'B2B SaaS for renewable energy engineers. Owned several modules and hired the frontend team.',
-  },
-  {
-    role: 'UI and Mobile Developer',
-    company: 'Vipera Ibérica',
+    company: 'Vipera',
+    role: 'UI and mobile developer, product owner',
     dates: '2020',
-    line: 'A web app for Banco Santander and a mobile app for Bizum.',
+    year: '2020',
+    points: [
+      'A web app for Banco Santander and a mobile app for Bizum.',
+      'Product owner between the bank’s requirements and the build.',
+    ],
   },
   {
-    role: 'Full-stack and mobile developer',
-    company: 'Ribera Salud, TGM, Agensys',
-    dates: '2017 to 2019',
-    line: 'Healthcare software in React, Node and .NET, two Ionic apps and a React landing page.',
+    company: 'Rated Power',
+    role: 'Senior UI developer and product owner',
+    dates: '2020 – 2023',
+    year: '2020',
+    points: [
+      'B2B SaaS used by renewable energy engineers around the world.',
+      'Product owner for several modules, from roadmap to release.',
+      'Hired the frontend team from zero and set up its onboarding.',
+    ],
+  },
+  {
+    company: 'Bravo Capital',
+    role: 'Senior frontend developer',
+    dates: '2023 – 2024',
+    year: '2023',
+    points: [
+      'Redesigned the app’s architecture and cut technical debt.',
+      'Coding standards that shortened code review cycles.',
+      'Faster load times on the critical screens.',
+    ],
+  },
+  {
+    company: 'Qida',
+    role: 'Lead frontend developer',
+    dates: '2024 – now',
+    year: '2024',
+    points: [
+      'Built and lead a five-person frontend team.',
+      'A component library shared across the platform.',
+      'An agent orchestrator that writes our Playwright tests.',
+      'Spec-Driven Development with GitHub Spec Kit.',
+    ],
   },
 ];
 
