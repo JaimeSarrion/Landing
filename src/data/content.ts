@@ -26,6 +26,8 @@ export interface Project {
   stack: string[];
   live?: string;
   code?: string;
+  /** Real screenshots in src/assets/projects/<id>/, in file-name order, with their alt text. */
+  shots?: string[];
 }
 
 export const statusLabel: Record<Status, string> = {
@@ -45,6 +47,11 @@ export const projects: Project[] = [
     facts: [['Runs on', 'Any phone browser'], ['Players join', 'By QR code'], ['Built with', 'Claude Code']],
     stack: ['React', 'TypeScript', 'Zustand', 'TanStack Query', 'Express', 'MySQL', 'Vite'],
     live: 'https://yimi-game.jsarrion.es/',
+    shots: [
+      'Beer Odyssey lobby: the QR code to join and the players who are ready',
+      'Beer Odyssey entry form: a player writes the question they bring to the game',
+      'Beer Odyssey in play: the scoreboard and a question card written by a player',
+    ],
   },
   {
     id: 'torsion',
@@ -56,6 +63,11 @@ export const projects: Project[] = [
     facts: [['Platforms', 'Web PWA and Android'], ['AI', 'Claude, only when rules fall short'], ['Access', 'Invite list']],
     stack: ['Expo', 'React Native', 'NestJS', 'Prisma', 'PostgreSQL', 'Claude API', 'Docker', 'Playwright'],
     live: 'https://entrenamiento.jsarrion.es',
+    shots: [
+      'Torsion home: the current training block and this week’s progress',
+      'Torsion set logging: weight, reps and effort for each set, with the rest timer',
+      'Torsion share card after a session: total volume and the week at a glance',
+    ],
   },
   {
     id: 'floor-plan',
