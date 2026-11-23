@@ -97,6 +97,25 @@ export function initMotion() {
     ),
   );
 
+  // ---------- real screenshots: the three phones fan out as the card arrives ----------
+  const FAN = [
+    { xPercent: -50, rotate: -7, scale: 0.86, yPercent: 2 },
+    { xPercent: 0, rotate: 0, scale: 1, yPercent: -2 },
+    { xPercent: 50, rotate: 7, scale: 0.86, yPercent: 2 },
+  ];
+  $$('.shots').forEach((group) => {
+    const card = group.closest('.pcard');
+    $$('[data-shot]', group).forEach((shot) => {
+      const i = Number(shot.dataset.shot);
+      const to = FAN[i] ?? FAN[1];
+      gsap.fromTo(
+        shot,
+        { xPercent: 0, yPercent: 18 + i * 4, rotate: 0, scale: 0.82 },
+        { ...to, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 95%', end: 'top 25%', scrub: 0.6 } },
+      );
+    });
+  });
+
   const mm = gsap.matchMedia();
   mm.add('(min-width: 901px)', () => {
     // ---------- hero: pin and explode the stack ----------
@@ -133,12 +152,17 @@ export function initMotion() {
     cards.forEach((card, i) => {
       const next = cards[i + 1];
       if (!next) return;
-      gsap.to(card, {
-        scale: 0.9,
-        filter: 'brightness(.45)',
-        ease: 'none',
-        scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 120px', scrub: true },
-      });
+      gsap.fromTo(
+        card,
+        { scale: 1, filter: 'brightness(1)' },
+        {
+          scale: 0.9,
+          filter: 'brightness(0.45)',
+          ease: 'none',
+          immediateRender: false,
+          scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 120px', scrub: true },
+        },
+      );
     });
 
     // ---------- AI: horizontal track ----------
