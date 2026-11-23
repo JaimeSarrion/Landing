@@ -69,28 +69,16 @@ const ext = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3
           <a class="btn btn--ghost" href="#projects">See the projects</a>
         </div>
       </div>
-      <div class="stack3d" aria-hidden="true">
-        <div class="stack3d__scene">
-          <div class="layer layer--model">
-            <div class="layer__tag"><span>model</span><span>claude</span></div>
-            <div class="layer__body">messages.create(&#123;<br />&nbsp;&nbsp;system: coach,<br />&nbsp;&nbsp;messages: history<br />&#125;)</div>
-            <span class="layer__label">Model</span>
-          </div>
-          <div class="layer layer--api">
-            <div class="layer__tag"><span>api</span><span>nestjs</span></div>
-            <div class="layer__body"><span class="accent">POST</span> /api/plans<br /><span class="muted">→ 201 Created</span><br /><span class="muted">postgres · 14 ms</span></div>
-            <span class="layer__label">API and data</span>
-          </div>
-          <div class="layer layer--ui">
-            <div class="layer__tag"><span>interface</span><span>react</span></div>
-            <div class="layer__body">
-              <div class="mini-row"><b>Back squat</b><span>5 × 5 · 80 kg</span></div>
-              <div class="mini-row"><b>Pull-ups</b><span>4 × 8</span></div>
-              <span class="mini-btn">Generate next week</span>
-            </div>
-            <span class="layer__label">Interface</span>
-          </div>
+      <div class="tty" data-tty>
+        <div class="tty__bar">
+          <span class="tty__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="tty__title">~/web-app · agent</span>
+          <button class="tty__pause" type="button" aria-pressed="false">Pause</button>
         </div>
+        <div class="tty__body" aria-hidden="true">
+          <div class="tty__lines"></div>
+        </div>
+        <p class="sr">Animated terminal: an agent reads a spec, plans six test cases, writes Playwright tests, reviews them, runs them and opens a pull request.</p>
       </div>
     </div>
     <div class="scroll-hint mono" aria-hidden="true"><span>Scroll</span><i></i></div>

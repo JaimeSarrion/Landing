@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import { initTerminal } from './terminal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +14,10 @@ export function initMotion() {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tty = $('[data-tty]');
+  if (tty) initTerminal(tty, !reduced);
+  if (reduced) return;
 
   // Smooth scroll, driven by GSAP's ticker so ScrollTrigger stays in sync.
   const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 0.9 });
@@ -36,7 +40,7 @@ export function initMotion() {
     .from('.hero__name .line > span', { yPercent: 110, duration: 1.4, stagger: 0.12 })
     .from('[data-hero-fade]', { y: 24, opacity: 0, duration: 1.1, stagger: 0.1 }, 0.5)
     .from('.hero__meta', { opacity: 0, duration: 1 }, 0.6)
-    .from('.layer', { opacity: 0, y: -80, duration: 1.4, stagger: 0.12 }, 0.2);
+    .from('.tty', { opacity: 0, y: 60, rotateX: 12, transformPerspective: 1200, duration: 1.6 }, 0.3);
 
   // ---------- manifesto: words light up as you read ----------
   const words = $$('.manifesto .w');
@@ -97,13 +101,10 @@ export function initMotion() {
   mm.add('(min-width: 901px)', () => {
     // ---------- hero: pin and explode the stack ----------
     gsap.timeline({
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=120%', pin: true, scrub: 0.8 },
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=70%', pin: true, scrub: 0.8 },
     })
-      .to('.stack3d__scene', { rotateX: 62, rotateZ: -28, scale: 1.05, ease: 'none' }, 0)
-      .to('.layer--ui', { '--z': 260, ease: 'none' }, 0)
-      .to('.layer--model', { '--z': -260, ease: 'none' }, 0)
-      .to('.layer__label', { opacity: 1, stagger: 0.08, ease: 'none' }, 0.15)
-      .to('.hero__text', { y: -60, opacity: 0.25, ease: 'none' }, 0.4)
+      .to('.tty', { scale: 1.06, y: -30, ease: 'none' }, 0)
+      .to('.hero__text', { y: -60, opacity: 0.25, ease: 'none' }, 0.3)
       .to('.scroll-hint', { opacity: 0, duration: 0.1 }, 0);
 
     // ---------- timeline: pin, fill the track, swap the job ----------
