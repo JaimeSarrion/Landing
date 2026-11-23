@@ -1,7 +1,7 @@
 # Product: jsarrion.es
 
 ## What it is
-Personal portfolio and CV of Jaime Sarrión, Lead Frontend Developer (Qida, since July 2024), based in Valencia, Spain.
+Personal portfolio and CV of Jaime Sarrión, Lead Frontend Developer (Qida, since July 2024), based in Spain.
 One static page in English.
 
 ## Who reads it

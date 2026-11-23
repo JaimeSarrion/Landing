@@ -68,22 +68,29 @@ export function initMotion() {
     }),
   );
 
-  // ---------- marquee: drifts on its own, speeds up and flips with the scroll ----------
+  // ---------- marquee: a slow drift that follows the scroll direction; stops under the pointer ----------
   $$('[data-marquee]').forEach((row) => {
     const dir = Number(row.dataset.marquee);
     const half = row.scrollWidth / 2;
     const tween = gsap.fromTo(
       row,
       { x: dir > 0 ? 0 : -half },
-      { x: dir > 0 ? -half : 0, duration: 40, ease: 'none', repeat: -1 },
+      { x: dir > 0 ? -half : 0, duration: 110, ease: 'none', repeat: -1 },
     );
+    let hovered = false;
+    let direction = 1;
+    row.addEventListener('pointerenter', () => { hovered = true; gsap.to(tween, { timeScale: 0, duration: 0.5, overwrite: true }); });
+    row.addEventListener('pointerleave', () => { hovered = false; gsap.to(tween, { timeScale: direction, duration: 0.6, overwrite: true }); });
     ScrollTrigger.create({
       trigger: row,
       start: 'top bottom',
       end: 'bottom top',
       onUpdate: (self) => {
-        const v = gsap.utils.clamp(-6, 6, self.getVelocity() / 300);
-        gsap.to(tween, { timeScale: (self.direction || 1) * (1 + Math.abs(v)), duration: 0.4, overwrite: true });
+        if (hovered) return;
+        direction = self.direction || 1;
+        const boost = gsap.utils.clamp(0, 0.6, Math.abs(self.getVelocity()) / 4000);
+        gsap.to(tween, { timeScale: direction * (1 + boost), duration: 0.5, overwrite: true });
+        gsap.to(tween, { timeScale: direction, duration: 1.2, delay: 0.5 });
       },
     });
   });
@@ -111,7 +118,7 @@ export function initMotion() {
       gsap.fromTo(
         shot,
         { xPercent: 0, yPercent: 18 + i * 4, rotate: 0, scale: 0.82 },
-        { ...to, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 95%', end: 'top 25%', scrub: 0.6 } },
+        { ...to, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 95%', end: 'top 45%', scrub: 0.6 } },
       );
     });
   });
@@ -160,7 +167,7 @@ export function initMotion() {
           filter: 'brightness(0.45)',
           ease: 'none',
           immediateRender: false,
-          scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 120px', scrub: true },
+          scrollTrigger: { trigger: next, start: 'top 60%', end: 'top 120px', scrub: true },
         },
       );
     });

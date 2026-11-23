@@ -7,7 +7,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/jaime-sarrion-sahuquillo/',
   title: 'Jaime Sarrión: frontend lead building full-stack AI products',
   description:
-    'Lead Frontend Developer at Qida in Valencia. React and TypeScript, Node APIs, and LLM features with the Claude API. Open to full-stack roles with an AI focus.',
+    'Lead Frontend Developer at Qida, based in Spain. React and TypeScript, Node APIs, and LLM features with the Claude API. Open to full-stack roles with an AI focus.',
 };
 
 export type Status = 'live' | 'building' | 'archived';
