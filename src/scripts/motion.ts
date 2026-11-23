@@ -152,12 +152,17 @@ export function initMotion() {
     cards.forEach((card, i) => {
       const next = cards[i + 1];
       if (!next) return;
-      gsap.to(card, {
-        scale: 0.9,
-        filter: 'brightness(.45)',
-        ease: 'none',
-        scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 120px', scrub: true },
-      });
+      gsap.fromTo(
+        card,
+        { scale: 1, filter: 'brightness(1)' },
+        {
+          scale: 0.9,
+          filter: 'brightness(0.45)',
+          ease: 'none',
+          immediateRender: false,
+          scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 120px', scrub: true },
+        },
+      );
     });
 
     // ---------- AI: horizontal track ----------
