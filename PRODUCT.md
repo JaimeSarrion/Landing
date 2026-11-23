@@ -14,9 +14,9 @@ Get an interview for a **full-stack role with an AI focus**. Main action: email 
 ## Positioning
 - Today: frontend lead (team of five, component library, stack decisions, hiring, mentoring).
 - Direction: owning the whole stack — interface, API, data, deployment and LLM calls.
-- Evidence of AI as product: Torsion (Claude API), planned AI training-plan module in Entrena.
+- Evidence of AI as product: Torsion, a training app where rules plan the week and the Claude API rewrites it only when something changes (key server-side, tokens and cost logged).
 - Evidence of AI as workflow: agent orchestrator for Playwright tests at Qida, Spec-Driven Development with GitHub Spec Kit, context compression with qmd to cut token cost.
-- Evidence of full stack: Entrena (React Native/Expo + NestJS + PostgreSQL + Docker on an OVH VPS), Beer Odyssey (live, multi-player via QR).
+- Evidence of full stack: Torsion (Expo/React Native + NestJS + Prisma + PostgreSQL + Docker Compose on an OVH VPS, GHCR deploys), Beer Odyssey (React + Express + MySQL, live, multi-player via QR), Casa 3D (React Three Fiber).
 
 ## Tone
 Plain, specific, first person, no hype. Facts over adjectives. No "passionate", no skill bars.

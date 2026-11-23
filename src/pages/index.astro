@@ -150,20 +150,13 @@ const ext = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3
                   <div class="players"><span>Lucía <em>Ready</em></span><span>Pablo <em>Ready</em></span><span>Marta <em style="color:#a35a00">Writing…</em></span></div>
                 </div></div>
               )}
-              {p.id === 'entrena' && (
+              {p.id === 'torsion' && (
                 <div class="app-ui" data-float>
                   <div class="app-ui__head">Monday · Legs<small>week 6</small></div>
                   <div class="set"><b>Back squat</b><span>5 × 5 · 80 kg</span><span class="ok">✓</span></div>
                   <div class="set"><b>Romanian deadlift</b><span>4 × 8 · 70 kg</span><span class="ok">✓</span></div>
                   <div class="set"><b>Walking lunges</b><span>3 × 12</span><span class="ok" style="background:#c9c6bc"> </span></div>
                   <div class="ai-note"><i></i>Next week: squat to 82.5 kg, keep the deadlift.</div>
-                </div>
-              )}
-              {p.id === 'torsion' && (
-                <div class="chat" data-float>
-                  <span class="chat__meta">torsion · claude api</span>
-                  <div class="msg msg--me">Plan my week around three gym sessions.</div>
-                  <div class="msg msg--ai"><span class="typing"><i></i><i></i><i></i></span></div>
                 </div>
               )}
               {p.id === 'floor-plan' && (
@@ -174,7 +167,7 @@ const ext = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3
                   <polygon class="room" points="230,70 330,122 230,174 130,122" />
                   <polygon class="room" points="330,128 410,150 330,192 250,170" />
                   <polygon class="acc" points="150,170 200,196 170,212 120,186" />
-                  <text x="208" y="126">salón</text><text x="306" y="166">cocina</text><text x="128" y="230">baño</text>
+                  <text x="208" y="126">living</text><text x="306" y="166">kitchen</text><text x="128" y="230">bath</text>
                 </svg>
               )}
               {p.id === 'argos' && (
@@ -238,7 +231,7 @@ const ext = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3
         <article class="ai__card">
           <span class="n">Product</span>
           <h3>Claude inside my own apps</h3>
-          <p>Torsion runs on the Claude API, and Entrena’s next module asks Claude to draft training plans.</p>
+          <p>In Torsion, rules plan the week and Claude steps in only when something changes. The key stays on the server and every call logs its tokens and cost.</p>
           <div class="ai__viz"><div class="term"><span class="k">const</span> <span class="w">plan</span> = <span class="k">await</span> claude.messages.create(&#123;
   model: <span class="s">"claude-sonnet-5-5"</span>,
   system: coachPrompt,
