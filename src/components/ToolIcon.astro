@@ -1,0 +1,16 @@
+---
+import * as icons from 'simple-icons';
+
+interface Props { slug?: string; name: string }
+const { slug, name } = Astro.props;
+const key = slug ? `si${slug[0].toUpperCase()}${slug.slice(1)}` : '';
+const icon = key ? (icons as Record<string, { path: string; hex: string } | undefined>)[key] : undefined;
+const initials = name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2);
+---
+{icon ? (
+  <span class="tool__ic" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d={icon.path} fill={`#${icon.hex}`} /></svg>
+  </span>
+) : (
+  <span class="tool__ic tool__ic--txt" aria-hidden="true">{initials}</span>
+)}

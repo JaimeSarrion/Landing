@@ -1,0 +1,281 @@
+---
+import '../styles/global.css';
+import ToolIcon from '../components/ToolIcon.astro';
+import { site, projects, statusLabel, jobs, education, stack } from '../data/content';
+
+const mail = `mailto:${site.email}?subject=${encodeURIComponent('Full-stack role')}`;
+const year = new Date().getFullYear();
+
+const manifesto =
+  'Nine years building interfaces people use every day. Now I want the whole product: the API, the data, the deployment and the model calls that make it smart.';
+const highlight = new Set(['whole', 'product:', 'smart.']);
+
+const tools = stack.flatMap((g) => g.tools);
+
+// a fixed pattern that reads as a QR code without encoding anything
+const qr = Array.from({ length: 121 }, (_, i) => {
+  const x = i % 11, y = Math.floor(i / 11);
+  const finder = (x < 3 && y < 3) || (x > 7 && y < 3) || (x < 3 && y > 7);
+  return finder ? !(x === 1 && y === 1) && !(x === 9 && y === 1) && !(x === 1 && y === 9) : (x * 7 + y * 13 + x * y) % 3 === 0;
+});
+const arrow = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h8M5.5 2.5 9 6l-3.5 3.5"/></svg>';
+const ext = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4 3.5h4.5V8"/></svg>';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{site.title}</title>
+  <meta name="description" content={site.description} />
+  <link rel="canonical" href="https://jsarrion.es/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={site.title} />
+  <meta property="og:description" content="Frontend lead at Qida, moving into full-stack AI engineering. Projects, experience and contact." />
+  <meta property="og:url" content="https://jsarrion.es/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+  <script is:inline>
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-motion');
+    else document.documentElement.classList.add('no-motion');
+  </script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__logo" href="#top"><i aria-hidden="true"></i>{site.name}</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#path">Path</a><a href="#projects">Projects</a><a href="#ai">AI</a><a href="#stack">Stack</a>
+    </nav>
+    <a class="btn" href={mail}>Email me</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero__meta mono" aria-hidden="true">
+        <span><i class="live"></i>Open to full-stack roles</span>
+        <span>Valencia, Spain</span>
+      </div>
+      <div class="hero__text">
+        <h1 id="hero-h" class="hero__name"><span class="line"><span>Jaime</span></span><span class="line"><span>Sarrión</span></span></h1>
+        <p class="hero__role" data-hero-fade><b>Lead frontend developer at Qida,</b> moving into full-stack products with AI inside them.</p>
+        <div class="hero__cta" data-hero-fade>
+          <a class="btn" href={mail}>Email me<Fragment set:html={arrow} /></a>
+          <a class="btn btn--ghost" href="#projects">See the projects</a>
+        </div>
+      </div>
+      <div class="tty" data-tty>
+        <div class="tty__bar">
+          <span class="tty__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="tty__title">~/web-app · agent</span>
+          <button class="tty__pause" type="button" aria-pressed="false">Pause</button>
+        </div>
+        <div class="tty__body" aria-hidden="true">
+          <div class="tty__lines"></div>
+        </div>
+        <p class="sr">Animated terminal: an agent reads a spec, plans six test cases, writes Playwright tests, reviews them, runs them and opens a pull request.</p>
+      </div>
+    </div>
+    <div class="scroll-hint mono" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </section>
+
+  <section class="manifesto" aria-label="About">
+    <div class="wrap">
+      <p data-words>{manifesto.split(' ').map((w) => <><span class:list={['w', { hl: highlight.has(w) }]}>{w}</span>{' '}</>)}</p>
+    </div>
+  </section>
+
+  <section class="timeline" id="path" aria-labelledby="path-h">
+    <div class="timeline__pin">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="path-h">The path<span class="accent">.</span></h2>
+          <p>From mobile apps in 2017 to leading a frontend team. Scroll through it.</p>
+        </div>
+        <div class="track" aria-hidden="true">
+          <div class="track__fill"></div>
+          <div class="track__dots">
+            {jobs.map((j, i) => <div class="track__dot" style={`left:${(i / (jobs.length - 1)) * 100}%`}><i></i><span>{j.dates}</span></div>)}
+          </div>
+        </div>
+        <ol class="jobs">
+          {jobs.map((j) => (
+            <li class="job">
+              <div>
+                <p class="job__dates">{j.dates}</p>
+                <h3 class="job__co">{j.company}</h3>
+                <p class="job__role">{j.role}</p>
+              </div>
+              <ul>{j.points.map((pt) => <li>{pt}</li>)}</ul>
+            </li>
+          ))}
+        </ol>
+        <p class="edu">{education.map((e) => <span>{e}</span>)}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <h2 id="projects-h">Projects<span class="accent">.</span></h2>
+        <p>Things I build on my own time, end to end: design, code, server.</p>
+      </div>
+      <div class="cards">
+        {projects.map((p) => (
+          <article class="pcard" aria-labelledby={`p-${p.id}`}>
+            <div class="pcard__text">
+              <div class="pcard__top"><span class={`pill pill--${p.status}`}>{statusLabel[p.status]}</span><span class="mono muted">{p.year}</span></div>
+              <h3 id={`p-${p.id}`}>{p.name}</h3>
+              <p>{p.body}</p>
+              {p.stack.length > 0 && <ul class="tags" aria-label="Stack">{p.stack.map((s) => <li>{s}</li>)}</ul>}
+              {(p.live || p.code) && (
+                <div class="pcard__links">
+                  {p.live && <a class="btn" href={p.live} target="_blank" rel="noopener">Open {p.name}<Fragment set:html={ext} /></a>}
+                  {p.code && <a class="btn btn--ghost" href={p.code} target="_blank" rel="noopener">Read the code</a>}
+                </div>
+              )}
+              <dl class="facts">{p.facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+            </div>
+            <div class="pcard__visual" aria-hidden="true">
+              {p.id === 'beer-odyssey' && (
+                <div class="phone" data-float><div class="phone__screen">
+                  <b>BEER ODYSSEY</b><span style="font-size:12px;color:#55544f">Scan to join the game</span>
+                  <div class="qr">{qr.map((on) => <i class:list={{ o: !on }}></i>)}</div>
+                  <div class="players"><span>Lucía <em>Ready</em></span><span>Pablo <em>Ready</em></span><span>Marta <em style="color:#a35a00">Writing…</em></span></div>
+                </div></div>
+              )}
+              {p.id === 'torsion' && (
+                <div class="app-ui" data-float>
+                  <div class="app-ui__head">Monday · Legs<small>week 6</small></div>
+                  <div class="set"><b>Back squat</b><span>5 × 5 · 80 kg</span><span class="ok">✓</span></div>
+                  <div class="set"><b>Romanian deadlift</b><span>4 × 8 · 70 kg</span><span class="ok">✓</span></div>
+                  <div class="set"><b>Walking lunges</b><span>3 × 12</span><span class="ok" style="background:#c9c6bc"> </span></div>
+                  <div class="ai-note"><i></i>Next week: squat to 82.5 kg, keep the deadlift.</div>
+                </div>
+              )}
+              {p.id === 'floor-plan' && (
+                <svg class="iso" viewBox="0 0 460 320" data-float>
+                  <polygon class="floor" points="230,40 440,150 230,260 20,150" />
+                  <polygon class="wall" points="20,150 230,40 230,10 20,120" />
+                  <polygon class="wall-d" points="230,40 440,150 440,120 230,10" />
+                  <polygon class="room" points="230,70 330,122 230,174 130,122" />
+                  <polygon class="room" points="330,128 410,150 330,192 250,170" />
+                  <polygon class="acc" points="150,170 200,196 170,212 120,186" />
+                  <text x="208" y="126">living</text><text x="306" y="166">kitchen</text><text x="128" y="230">bath</text>
+                </svg>
+              )}
+              {p.id === 'argos' && (
+                <div class="radar" data-float>
+                  <span style="left:62%;top:30%"></span><em style="left:66%;top:26%">sensor 03</em>
+                  <span style="left:28%;top:58%"></span><em style="left:32%;top:54%">sensor 07</em>
+                  <span style="left:48%;top:48%;background:#f3f2ee;box-shadow:0 0 14px #f3f2ee"></span><em style="left:52%;top:44%">gateway</em>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ai" id="ai" aria-labelledby="ai-h">
+    <div class="ai__pin">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="ai-h">AI, daily<span class="accent">.</span></h2>
+          <p>How I already work with agents at Qida, and how I put models inside my own products.</p>
+        </div>
+      </div>
+      <div class="ai__track">
+        <article class="ai__card">
+          <span class="n">Agents</span>
+          <h3>An orchestrator that writes our tests</h3>
+          <p>Planning, writing and review go to separate agents, so test coverage grows without one huge prompt.</p>
+          <div class="ai__viz">
+            <svg class="dia" viewBox="0 0 520 220">
+              <path class="ln" d="M120 110H200" /><path class="ln" d="M320 110C360 110 360 40 400 40" /><path class="ln" d="M320 110H400" /><path class="ln" d="M320 110C360 110 360 180 400 180" />
+              <path class="pulse" d="M120 110H200" /><path class="pulse" d="M320 110C360 110 360 40 400 40" /><path class="pulse" d="M320 110H400" /><path class="pulse" d="M320 110C360 110 360 180 400 180" />
+              <rect x="0" y="86" width="120" height="48" rx="12" /><text x="22" y="115">spec.md</text>
+              <rect class="hub" x="200" y="80" width="120" height="60" rx="14" /><text class="hub-t" x="216" y="115">Orchestrator</text>
+              <rect x="400" y="20" width="120" height="40" rx="12" /><text x="420" y="45">Planner</text>
+              <rect x="400" y="90" width="120" height="40" rx="12" /><text x="420" y="115">Writer</text>
+              <rect x="400" y="160" width="120" height="40" rx="12" /><text x="420" y="185">Reviewer</text>
+            </svg>
+          </div>
+        </article>
+        <article class="ai__card">
+          <span class="n">Specs</span>
+          <h3>The spec comes before the code</h3>
+          <p>With GitHub Spec Kit, product and engineering agree on spec, plan and tasks before anyone opens an editor.</p>
+          <div class="ai__viz"><div class="term"><span class="w">specs/014-checkout-form/</span>
+  spec.md      <span class="ok">approved</span>
+  plan.md      <span class="ok">approved</span>
+  tasks.md     <span class="k">12 tasks</span>
+  contracts/   checkout.yaml</div></div>
+        </article>
+        <article class="ai__card">
+          <span class="n">Context</span>
+          <h3>Only the context an agent needs</h3>
+          <p>qmd indexes the repo, so an agent pulls the few files that matter. Fewer tokens, sharper answers.</p>
+          <div class="ai__viz"><div class="term"><span class="k">$</span> <span class="w">qmd query</span> <span class="s">"checkout validation"</span>
+  useCheckoutForm.ts       <span class="ok">0.91</span>
+  schema/checkout.ts       <span class="ok">0.87</span>
+  CheckoutForm.test.tsx    <span class="ok">0.74</span></div></div>
+        </article>
+        <article class="ai__card">
+          <span class="n">Product</span>
+          <h3>Claude inside my own apps</h3>
+          <p>In Torsion, rules plan the week and Claude steps in only when something changes. The key stays on the server and every call logs its tokens and cost.</p>
+          <div class="ai__viz"><div class="term"><span class="k">const</span> <span class="w">plan</span> = <span class="k">await</span> claude.messages.create(&#123;
+  model: <span class="s">"claude-sonnet-5-5"</span>,
+  system: coachPrompt,
+  messages: history,
+&#125;);</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="stackband" id="stack" aria-labelledby="stack-h">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <h2 id="stack-h">Stack<span class="accent">.</span></h2>
+        <p>Front to back, plus the AI tooling I use every day.</p>
+      </div>
+    </div>
+    <ul class="marquee" data-marquee="1" aria-label="Tools">
+      {[...tools, ...tools].map((t, i) => <li class="tool" aria-hidden={i >= tools.length ? 'true' : undefined}><ToolIcon slug={t.icon} name={t.name} />{t.name}</li>)}
+    </ul>
+    <ul class="marquee" data-marquee="-1" aria-hidden="true">
+      {[...tools.slice().reverse(), ...tools.slice().reverse()].map((t) => <li class="tool"><ToolIcon slug={t.icon} name={t.name} />{t.name}</li>)}
+    </ul>
+    <div class="wrap"><p class="legal-note">Product names and logos are trademarks of their owners.</p></div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h" class="contact__big"><span data-split>Let’s build</span><span data-split class="accent">the whole thing.</span></h2>
+      <div class="contact__row">
+        <p>Hiring for a full-stack role with AI? Tell me about the product, the team and the stack.</p>
+        <a class="mail" href={mail}>{site.email}</a>
+      </div>
+      <footer class="foot">
+        <span>© {year} {site.name}. No cookies, no tracking.</span>
+        <nav aria-label="Elsewhere"><a href={site.github} rel="me">GitHub</a><a href={site.linkedin} rel="me">LinkedIn</a></nav>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script>
+  import { initMotion } from '../scripts/motion';
+  initMotion();
+</script>
+</body>
+</html>
